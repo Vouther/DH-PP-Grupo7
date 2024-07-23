@@ -7,7 +7,7 @@ export default function Example() {
       <div className="px-4 sm:px-0">
         <p className="text-center text-base font-semibold leading-7 text-gray-900">Datos personales.</p>
       </div>
-      <div className="mt-6 border-t border-black">
+      <div className="mt-6 border-t border-gray-400">
           <dl className="divide-y divide-gray-100">
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">Nombre</dt>
@@ -26,7 +26,7 @@ export default function Example() {
       <div className="px-4 sm:px-0">
           <p className="text-center text-base font-semibold leading-7 text-gray-900">Detalles de la postulación.</p>
       </div>
-      <div className="mt-6 border-t border-black">
+      <div className="mt-6 border-t border-gray-400">
           <dl className="divide-y divide-gray-100">
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">Profesión</dt>
@@ -45,7 +45,7 @@ export default function Example() {
       <div className="px-4 sm:px-0">
           <p className="text-center text-base font-semibold leading-7 text-gray-900">Datos de contacto.</p>
       </div>
-      <div className="mt-6 border-t border-black">
+      <div className="mt-6 border-t border-gray-400">
           <dl className="divide-y divide-gray-100">
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">Teléfono</dt>
@@ -75,7 +75,7 @@ export default function Example() {
               </div>
               <div className="ml-4 flex-shrink-0">
                 <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                  Download
+                  Descargar
                 </a>
               </div>
             </li>
@@ -89,7 +89,7 @@ export default function Example() {
               </div>
               <div className="ml-4 flex-shrink-0">
                 <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                  Download
+                  Descargar
                 </a>
               </div>
             </li>

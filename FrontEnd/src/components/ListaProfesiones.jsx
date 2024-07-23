@@ -59,7 +59,7 @@ export default function listProfesion() {
       <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Profesiones</h2>
       <p className="mt-4 text-xl text-gray-500">En esta sección, encontrarás una amplia variedad de profesiones disponibles en nuestra plataforma. Desde roles técnicos hasta creativos, ofrecemos un abanico de oportunidades para que encuentres el puesto ideal que se alinee con tus habilidades e intereses.</p>
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
-        <ul role="list" className="divide-y divide-black mt-4">
+        <ul role="list" className="divide-y divide-gray-400 mt-4">
           {people.map((person) => (
             <li key={person.email} className="flex justify-between gap-x-6 py-5">
               <div className="flex min-w-0 gap-x-4">

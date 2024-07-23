@@ -70,57 +70,55 @@ export default function Example() {
             <div className="">
                 <h6
                 className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
-                <img alt="" src="../../public/rrhh-gray-footer.png" className="h-8 w-auto" />
+                <img alt="" src="../../public/rrhh-gray-footer.png" className="h-8 w-auto px-2" />
                 Recursos Humanos
                 </h6>
                 <p>
-                Here you can use rows and columns to organize your footer
-                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
+                Este es un proyecto realizado como parte de la practica profecional planteado por el equipo de Digital House. En el mismo se empleo la metodologia SCRUM.
                 </p>
             </div>
             <div>
                 <h6
                 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                Products
+                Colaboradores
                 </h6>
                 <p className="mb-4">
-                <a href="#!">Angular</a>
+                <a href="#!">Brian</a>
                 </p>
                 <p className="mb-4">
-                <a href="#!">React</a>
+                <a href="#!">Leonel</a>
                 </p>
                 <p className="mb-4">
-                <a href="#!">Vue</a>
+                <a href="#!">Pablo</a>
                 </p>
                 <p>
-                <a href="#!">Laravel</a>
+                <a href="#!">Fernando</a>
                 </p>
             </div>
 
             <div>
                 <h6
                 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                Useful links
+                Opciones
                 </h6>
                 <p className="mb-4">
-                <a href="#!">Pricing</a>
+                <a href="#!">Postularse</a>
                 </p>
                 <p className="mb-4">
-                <a href="#!">Settings</a>
+                <a href="/companies">Empresas</a>
                 </p>
                 <p className="mb-4">
-                <a href="#!">Orders</a>
+                <a href="/applicants">Aspirantes</a>
                 </p>
                 <p>
-                <a href="#!">Help</a>
+                <a href="/contact">Contacto</a>
                 </p>
             </div>
 
             <div>
                 <h6
                 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
-                Contact
+                Datos de contacto
                 </h6>
                 <p className="mb-4 flex items-center justify-center md:justify-start">
                 <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
@@ -134,7 +132,7 @@ export default function Example() {
                         d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
                     </svg>
                 </span>
-                New York, NY 10012, US
+                San Salvador de Jujuy, JUJUY 4600, Argentina
                 </p>
                 <p className="mb-4 flex items-center justify-center md:justify-start">
                 <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
@@ -148,7 +146,7 @@ export default function Example() {
                         d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                     </svg>
                 </span>
-                info@example.com
+                infoRRHH@example.com
                 </p>
                 <p className="mb-4 flex items-center justify-center md:justify-start">
                 <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
@@ -162,7 +160,7 @@ export default function Example() {
                         clipRule="evenodd" />
                     </svg>
                 </span>
-                + 01 234 567 88
+                + 549 3884 567881
                 </p>
                 <p className="flex items-center justify-center md:justify-start">
                 <span className="me-3 [&>svg]:h-5 [&>svg]:w-5">
@@ -176,7 +174,7 @@ export default function Example() {
                         clipRule="evenodd" />
                     </svg>
                 </span>
-                + 01 234 567 89
+                + 549 3884 842164
                 </p>
             </div>
             </div>
@@ -184,9 +182,9 @@ export default function Example() {
 
 
         <div className="bg-black/5 p-6 text-center">
-            <span>© 2023 Copyright:</span>
+            <span>© 2024 Copyright:</span>
             <a className="font-semibold" href="https://tw-elements.com/"
-            >TW Elements</a
+            > RRHH - Grupo 7</a
             >
         </div>
         </footer>
