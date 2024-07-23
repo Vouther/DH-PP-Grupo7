@@ -7,7 +7,7 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$36',
+    price: '$35',
     color: 'Black',
   },
   {
@@ -25,7 +25,7 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$36',
+    price: '$35',
     color: 'Black',
   },
   {
@@ -43,7 +43,7 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$38',
+    price: '$35',
     color: 'Black',
   },
   {
@@ -52,18 +52,18 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$39',
+    price: '$35',
     color: 'Black',
   }
   // More products...
 ]
-
-export default function listCantidate({ selectedProfession }) {
-  const filteredProducts = selectedProfession === 'Todos'
-    ? products
-    : products.filter(product => product.price === selectedProfession);
-
+function getRandomProducts(products, count) {
+  const shuffled = [...products].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+const randomProducts = getRandomProducts(products, 4);
+export default function listCantidate() {
   return (
-    <Applicants products={filteredProducts} />
+    <Applicants products={randomProducts} />
   )
 }
