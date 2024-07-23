@@ -1,17 +1,5 @@
-/*
-  This example requires some changes to your config:
+import Applicants from "./Applicants";
 
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
 const products = [
   {
     id: 1,
@@ -19,14 +7,64 @@ const products = [
     href: '#',
     imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
     imageAlt: "Front of men's Basic Tee in black.",
+    price: '$36',
+    color: 'Black',
+  },
+  {
+    id: 2,
+    name: 'Basic Tee2',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
     price: '$35',
     color: 'Black',
   },
+  {
+    id: 3,
+    name: 'Basic Tee3',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: '$36',
+    color: 'Black',
+  },
+  {
+    id: 4,
+    name: 'Basic Tee4',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: '$35',
+    color: 'Black',
+  },
+  {
+    id: 5,
+    name: 'Basic Tee5',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: '$38',
+    color: 'Black',
+  },
+  {
+    id: 6,
+    name: 'Basic Tee6',
+    href: '#',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+    imageAlt: "Front of men's Basic Tee in black.",
+    price: '$39',
+    color: 'Black',
+  }
   // More products...
 ]
 
-export default function listCantidate() {
+export default function listCantidate({ selectedProfession }) {
+  const filteredProducts = selectedProfession === 'Todos'
+    ? products
+    : products.filter(product => product.price === selectedProfession);
+
   return (
+<<<<<<< HEAD
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-7 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Aspirantes</h2>
@@ -59,5 +97,8 @@ export default function listCantidate() {
         </div>
       </div>
     </div>
+=======
+    <Applicants products={filteredProducts} />
+>>>>>>> 001f8b4c6cb6f5cf8143adef9efcc36eb8403e60
   )
 }

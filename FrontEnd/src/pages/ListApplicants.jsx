@@ -5,11 +5,18 @@ import PostulateSection from "../components/PostulateSection";
 
 
 class ListApplicants extends React.Component {
+    state = {
+        selectedProfession: "Todos",
+    };
+
+    handleProfessionChange = (profession) => {
+        this.setState({ selectedProfession: profession });
+    };
     render() {
         return (
             <div>
-                <DropDownMenu />
-                <ListaAspirantes/>
+                <DropDownMenu onChange={this.handleProfessionChange} />
+                <ListaAspirantes selectedProfession={this.state.selectedProfession} />
                 <PostulateSection/>
             </div>
         )

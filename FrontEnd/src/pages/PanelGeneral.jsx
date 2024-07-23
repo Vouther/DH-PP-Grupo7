@@ -1,5 +1,5 @@
 import ListaProfesiones from '../components/ListaProfesiones'
-import ListaAspirantes from '../components/ListaAspirantes'
+import Lista4Aspirantes from '../components/Lista4Aspirantes'
 import Search from '../components/SectionSearch'
 import Companies from '../components/SectionCompanies'
 
@@ -8,7 +8,7 @@ function PanelGeneral () {
     <>
       <Search></Search>
       <div>
-        <ListaAspirantes></ListaAspirantes>
+        <Lista4Aspirantes></Lista4Aspirantes>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <a
             href="#"
