@@ -2,10 +2,10 @@ import { PaperClipIcon } from '@heroicons/react/20/solid'
 
 export default function Example() {
   return (
-    <div className="mx-auto max-w-2xl lg:max-w-4xl">
+    <div className="mx-auto max-w-2xl px-4 lg:max-w-4xl">
+      <h1 className="text-xl pb-4 font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">Información del Aspirante</h1>
       <div className="px-4 sm:px-0">
-        <h3 className="text-base font-semibold leading-7 text-gray-900">Información del Aspirante</h3>
-        <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Datos personales.</p>
+        <p className="text-center text-base font-semibold leading-7 text-gray-900">Datos personales.</p>
       </div>
       <div className="mt-6 border-t border-black">
           <dl className="divide-y divide-gray-100">
@@ -24,7 +24,7 @@ export default function Example() {
           </dl>
       </div>
       <div className="px-4 sm:px-0">
-          <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Detalles de la postulación.</p>
+          <p className="text-center text-base font-semibold leading-7 text-gray-900">Detalles de la postulación.</p>
       </div>
       <div className="mt-6 border-t border-black">
           <dl className="divide-y divide-gray-100">
@@ -43,7 +43,7 @@ export default function Example() {
           </dl>
       </div>
       <div className="px-4 sm:px-0">
-          <p className="mt-1 max-w-2xl text-sm leading-6 text-gray-500">Datos de contacto.</p>
+          <p className="text-center text-base font-semibold leading-7 text-gray-900">Datos de contacto.</p>
       </div>
       <div className="mt-6 border-t border-black">
           <dl className="divide-y divide-gray-100">
