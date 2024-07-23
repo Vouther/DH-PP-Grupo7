@@ -15,7 +15,7 @@ const controller = {
             const formattedProfessions = profesiones.map(profesion => ({
                 id: profesion.ProfesionID,
                 name: profesion.Nombre,
-                img: `/img/${profesion.Imagen}`,
+                img: `http://localhost:3001/img/${profesion.Imagen}`,
                 descripcion: profesion.Descripcion,
                 applicantsCount: profesion.get('applicantsCount')
             }));
