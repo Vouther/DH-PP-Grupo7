@@ -1,7 +1,7 @@
 import CandidatePresentation from "../components/CandidatePresentation";
 import ApplicantInformation from "../components/ApplicantInformation";
 
-const DetailCandidate = () => {
+function DetailCandidate(){
     return (
         <>
             <CandidatePresentation/>

@@ -17,6 +17,6 @@ export default function listCantidate({ selectedProfession }) {
     : applicants.filter(aspirante => aspirante.profesion === selectedProfession);
 
   return (
-    <Applicants products={filteredApplicant} />
+    <Applicants aspirantes={filteredApplicant} />
   )
 }

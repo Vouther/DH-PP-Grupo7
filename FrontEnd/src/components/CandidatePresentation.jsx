@@ -1,4 +1,18 @@
+import { useState,useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getApplicantById } from "../apiController/applicantsApi";
+
 export default function Example() {
+    const { id } = useParams();
+    const [applicants,setApplicants] = useState([]);
+
+    useEffect(() => {
+      console.log("Se monto el componente");
+      getApplicantById(id).then(res => {
+        setApplicants(res);
+      });
+    },[]);
+
     return (
       <section className="relative isolate overflow-hidden bg-white px-6 py-20 sm:py-28 lg:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
@@ -15,15 +29,15 @@ export default function Example() {
             <figcaption className="mt-10">
               <img
                 alt=""
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                src={applicants.avatar}
                 className="mx-auto h-10 w-10 rounded-full"
               />
               <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                <div className="font-semibold text-gray-900">Nombre Completo</div>
+                <div className="font-semibold text-gray-900">{applicants.firstName+" "+applicants.lastName}</div>
                 <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
                   <circle r={1} cx={1} cy={1} />
                 </svg>
-                <div className="text-gray-600">Profesion</div>
+                <div className="text-gray-600">{applicants.profesion}</div>
               </div>
             </figcaption>
           </figure>
