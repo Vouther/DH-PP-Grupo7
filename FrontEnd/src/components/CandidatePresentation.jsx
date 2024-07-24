@@ -30,7 +30,7 @@ export default function Example() {
               <img
                 alt=""
                 src={applicants.avatar}
-                className="mx-auto h-10 w-10 rounded-full"
+                className="mx-auto h-40 sm:h-48 md:h-64 lg:h-80 rounded-full"
               />
               <div className="mt-4 flex items-center justify-center space-x-3 text-base">
                 <div className="font-semibold text-gray-900">{applicants.firstName+" "+applicants.lastName}</div>

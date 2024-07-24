@@ -102,7 +102,7 @@ export default function Example() {
             </PopoverPanel>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/error" className="text-sm font-semibold leading-6 text-gray-900">
             Empresas
           </a>
           <a href="/applicants" className="text-sm font-semibold leading-6 text-gray-900">
@@ -113,7 +113,7 @@ export default function Example() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/error" className="text-sm font-semibold leading-6 text-gray-900">
             Acceder <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -161,7 +161,7 @@ export default function Example() {
                   </DisclosurePanel>
                 </Disclosure>
                 <a
-                  href="/companies"
+                  href="/error"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Empresas
@@ -181,7 +181,7 @@ export default function Example() {
               </div>
               <div className="py-6">
                 <a
-                  href="/login"
+                  href="/error"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Acceder

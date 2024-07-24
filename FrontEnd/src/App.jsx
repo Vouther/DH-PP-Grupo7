@@ -26,7 +26,7 @@ function App() {
         <Route path="/applicants" element={<ListApplicants />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/applicants/:id" element={<DetailCandidate />} />
-        <Route path="*" element={<VistaError/>}/>
+        <Route path="/error" element={<VistaError/>}/>
       </Routes>
       <div>
         <Footer></Footer>
