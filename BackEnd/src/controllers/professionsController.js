@@ -3,13 +3,17 @@ const db = require("../database/models");
 const controller = {
     renderList: (req, res) => {
         db.Profesion.findAll({
-            include: "aspirantes",
+            include: [{
+                model: db.Aspirante,
+                as: "aspirantes",
+                attributes: [] // No seleccionamos atributos de aspirantes directamente
+            }],
             attributes: {
                 include: [
                     [db.sequelize.fn('COUNT', db.sequelize.col('aspirantes.Dni')), 'applicantsCount']
                 ]
             },
-            group: ['Profesion.ProfesionID']
+            group: ['Profesion.ProfesionID', 'Profesion.Nombre', 'Profesion.Imagen', 'Profesion.Descripcion']
         })
         .then(function (profesiones) {
             const formattedProfessions = profesiones.map(profesion => ({
