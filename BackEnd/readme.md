@@ -9,28 +9,34 @@ Nombre: Listado de todos los aspirantes
 
 Ruta:
 
+![Aspirantes Ruta](presentation/applicants.png)
+
 Metodo:
 
 Descripcion:
 
-Imagen: (Imagen)
+![Aspirantes salida](presentation/applicants-salida.png)
 
 Nombre: Detalles de un aspirante
 
 Ruta:
 
+![Aspirante detalle](presentation/applicants-detail.png)
+
 Metodo:
 
 Descripcion:
 
-Imagen: (Imagen)
+![Aspirante detalle salida](presentation/applicants-detail-salida.png)
 
 Nombre: Listado de todas las profesiones
 
 Ruta:
 
+![Profesion](presentation/professions.png)
+
 Metodo:
 
 Descripcion:
 
-Imagen: (Imagen)
+![Profesion salida](presentation/preofessions-salida.png)
