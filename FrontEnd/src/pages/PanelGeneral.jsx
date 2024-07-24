@@ -1,4 +1,4 @@
-//import ListaProfesiones from '../components/ListaProfesiones'
+import ListaProfesiones from '../components/ListaProfesiones'
 import Lista4Aspirantes from '../components/Lista4Aspirantes'
 import Search from '../components/SectionSearch'
 import Companies from '../components/SectionCompanies'
@@ -21,7 +21,7 @@ function PanelGeneral () {
           </a>
         </div>
       </div>
-      {/*<ListaProfesiones></ListaProfesiones>*/}
+      <ListaProfesiones></ListaProfesiones>
       <Companies></Companies>
     </>
   )
