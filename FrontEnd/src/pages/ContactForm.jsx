@@ -11,7 +11,7 @@ export default function Example() {
     <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contactar con Soporte</h2>
-        <p className="mt-2 text-lg leading-8 text-gray-600">
+        <p className="mt-2 pb-5 text-lg leading-8 text-gray-600">
           Mandanos un mensaje con tus dudas para poder solucionar cualquier problema que tengas.
         </p>
       </div>
@@ -145,7 +145,7 @@ export default function Example() {
             </Label>
           </Field>
         </div>
-        <div className="mt-10">
+        <div className="py-10">
           <button
             type="submit"
             className="block w-full rounded-md custom-link px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
