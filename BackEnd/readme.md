@@ -3,40 +3,34 @@ Documentacion
 
 Modelo Entidad-Relacion
 
-(Imagen)
+![Diagrama](presentation/diagram.png)
 
-Nombre: Listado de todos los aspirantes
+Nombre: Listado de todos los aspirantes.
 
-Ruta:
+Metodo:GET     Ruta: /applicants     
 
 ![Aspirantes Ruta](presentation/applicants.png)
 
-Metodo:
-
-Descripcion:
+Descripcion: Se obtiene una lista de todos los aspirantes registrados en el sistema.
 
 ![Aspirantes salida](presentation/applicants-salida.png)
 
 Nombre: Detalles de un aspirante
 
-Ruta:
+Metodo: GET     Ruta: /applicants/:id
 
 ![Aspirante detalle](presentation/applicants-detail.png)
 
-Metodo:
-
-Descripcion:
+Descripcion: Se obtiene los datos de un aspirante específico.
 
 ![Aspirante detalle salida](presentation/applicants-detail-salida.png)
 
-Nombre: Listado de todas las profesiones
+Nombre: Listado de todas las profesiones.
 
-Ruta:
+Metodo: GET     Ruta: /professions
 
 ![Profesion](presentation/professions.png)
 
-Metodo:
-
-Descripcion:
+Descripcion: Se obtiene una lista de todas las profesiones registradas en el sistema.
 
 ![Profesion salida](presentation/preofessions-salida.png)
