@@ -49,7 +49,7 @@ renderDetail: (req, res) => {
         console.error('Error al obtener el aspirante:', error);
         res.status(500).json({ error: 'Error al obtener el aspirante' });
     });
-  }
+  },
 
   renderRegister: async (req, res) => {
     try {
