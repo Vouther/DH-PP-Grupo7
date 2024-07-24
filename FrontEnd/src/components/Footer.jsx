@@ -83,16 +83,16 @@ export default function Example() {
                 Colaboradores
                 </h6>
                 <p className="mb-4">
-                <a href="#!">Brian</a>
+                <a href="#!">Brian Luciano Valeriano Jurado </a>
                 </p>
                 <p className="mb-4">
-                <a href="#!">Leonel</a>
+                <a href="#!">Leonel Omar Ordoñez</a>
                 </p>
                 <p className="mb-4">
-                <a href="#!">Pablo</a>
+                <a href="#!">Pablo Ignacio Garzón</a>
                 </p>
                 <p>
-                <a href="#!">Fernando</a>
+                <a href="#!">Hector Fernando Calisaya</a>
                 </p>
             </div>
 

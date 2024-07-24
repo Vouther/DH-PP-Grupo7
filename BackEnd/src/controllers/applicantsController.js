@@ -12,7 +12,7 @@ const controller = {
             lastName: aspirante.Apellido,
             profession: aspirante.profesion.Nombre,
             status: aspirante.estado.Descripcion,
-            avatar: `/img/${aspirante.Imagen}`,
+            avatar: `http://localhost:3001/img/${aspirante.Imagen}`,
             detail: `/applicants/${aspirante.Dni}`
         }));
 
@@ -40,7 +40,7 @@ renderDetail: (req, res) => {
             linkedin: aspirante.LinkedinURL,
             birthdate: aspirante.FechaNacimiento,
             gender: aspirante.Sexo,
-            avatar: `/img/${aspirante.Imagen}`,
+            avatar: `http://localhost:3001/img/${aspirante.Imagen}`,
             profesion: aspirante.profesion.Nombre,
             estado: aspirante.estado.Descripcion
         };

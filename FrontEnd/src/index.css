@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 @tailwindcss forms;
+@tailwindcss aspect-ratio;
 
 .custom-link {
     background-color: #14a4fc;
