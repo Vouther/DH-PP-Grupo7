@@ -24,10 +24,9 @@ function App() {
       <Routes>
         <Route path="/" exact element={<PanelGeneral/>} />
         <Route path="/applicants" element={<ListApplicants />} />
-        <Route path="/companies" element={<VistaError />} />
-        <Route path="/login" element={<VistaError />} />
         <Route path="/contact" element={<ContactForm />} />
-        <Route path="/detail" element={<DetailCandidate />} />
+        <Route path="/applicants/:id" element={<DetailCandidate />} />
+        <Route path="*" element={<VistaError/>}/>
       </Routes>
       <div>
         <Footer></Footer>

@@ -19,6 +19,6 @@ export default function listCantidate() {
   const randomProducts = getRandomProducts(applicants, 4);
 
   return (
-    <Applicants products={randomProducts} />
+    <Applicants aspirantes={randomProducts} />
   )
 }

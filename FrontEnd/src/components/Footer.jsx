@@ -5,7 +5,7 @@ export default function Example() {
         <div
             className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-white/10 lg:justify-between">
             <div className="me-12 hidden lg:block">
-            <span>Conéctate con nosotras en las redes sociales:</span>
+            <span>Conéctate con nosotros en las redes sociales:</span>
             </div>
             <div className="flex justify-center">
             <a href="#!" className="me-6 [&>svg]:h-4 [&>svg]:w-4">
@@ -102,10 +102,10 @@ export default function Example() {
                 Opciones
                 </h6>
                 <p className="mb-4">
-                <a href="#!">Postularse</a>
+                <a href="#">Postularse</a>
                 </p>
                 <p className="mb-4">
-                <a href="/companies">Empresas</a>
+                <a href="#">Empresas</a>
                 </p>
                 <p className="mb-4">
                 <a href="/applicants">Aspirantes</a>

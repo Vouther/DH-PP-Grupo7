@@ -33,7 +33,7 @@ export default function Example() {
           <svg viewBox="0 0 2 2" aria-hidden="true" className="mx-2 inline h-0.5 w-0.5 fill-current">
             <circle r={1} cx={1} cy={1} />
           </svg>
-          Queremos que puedas aprender y crecer humana y profesionalmente en un entorno desafiante.
+          Queremos que puedas aprender, crecer humana y profesionalmente en un entorno desafiante.
         </p>
         <a
           href="#"

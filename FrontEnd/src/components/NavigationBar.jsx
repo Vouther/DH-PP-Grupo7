@@ -60,7 +60,7 @@ export default function Example() {
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
             <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Porfesiones
+              Profesiones
               <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
             </PopoverButton>
 
@@ -102,7 +102,7 @@ export default function Example() {
             </PopoverPanel>
           </Popover>
 
-          <a href="/companies" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Empresas
           </a>
           <a href="/applicants" className="text-sm font-semibold leading-6 text-gray-900">
@@ -113,7 +113,7 @@ export default function Example() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Acceder <span aria-hidden="true">&rarr;</span>
           </a>
         </div>

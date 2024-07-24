@@ -1,67 +1,84 @@
 import { PaperClipIcon } from '@heroicons/react/20/solid'
+import { useState,useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getApplicantById } from "../apiController/applicantsApi";
 
 export default function Example() {
+  const { id } = useParams();
+  const [applicants,setApplicants] = useState([]);
+
+  useEffect(() => {
+    console.log("Se monto el componente");
+    getApplicantById(id).then(res => {
+      setApplicants(res);
+    });
+  },[]);
+
   return (
     <div className="mx-auto max-w-2xl px-4 lg:max-w-4xl">
       <h1 className="text-xl pb-4 font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">Información del Aspirante</h1>
       <div className="px-4 sm:px-0">
-        <p className="text-center text-base font-semibold leading-7 text-gray-900">Datos personales.</p>
+        <p className="text-center text-base font-semibold leading-7 text-gray-900">Datos personales</p>
       </div>
       <div className="mt-6 border-t border-gray-400">
           <dl className="divide-y divide-gray-100">
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                  <dt className="text-sm font-medium leading-6 text-gray-900">Nombre</dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Margot Foster</dd>
+                  <dt className="text-sm font-medium leading-6 text-gray-900">DNI</dt>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.dni}</dd>
+              </div>
+              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt className="text-sm font-medium leading-6 text-gray-900">Nombre y Apellido</dt>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.firstName+" "+applicants.lastName}</dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">Fecha de nacimiento</dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">12/06/1998</dd>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.birthdate}</dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">Sexo</dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Definir</dd>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.gender}</dd>
               </div>
           </dl>
       </div>
       <div className="px-4 sm:px-0">
-          <p className="text-center text-base font-semibold leading-7 text-gray-900">Detalles de la postulación.</p>
+          <p className="text-center text-base font-semibold leading-7 text-gray-900">Detalles de la postulación</p>
       </div>
       <div className="mt-6 border-t border-gray-400">
           <dl className="divide-y divide-gray-100">
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">Profesión</dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Backend Developer</dd>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.profesion}</dd>
               </div>
-              <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+              {/* <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">Expectativa salarial</dt>
                   <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">$120,000</dd>
-              </div>
+              </div> */}
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                  <dt className="text-sm font-medium leading-6 text-gray-900">Acerca de mí</dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit id mollit nulla mollit nostrud in ea officia proident. Irure nostrud pariatur mollit ad adipisicing reprehenderit deserunt qui eu.</dd>
+                  <dt className="text-sm font-medium leading-6 text-gray-900">Estado de la postulación</dt>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.estado}</dd>
               </div>
           </dl>
       </div>
       <div className="px-4 sm:px-0">
-          <p className="text-center text-base font-semibold leading-7 text-gray-900">Datos de contacto.</p>
+          <p className="text-center text-base font-semibold leading-7 text-gray-900">Datos de contacto</p>
       </div>
       <div className="mt-6 border-t border-gray-400">
           <dl className="divide-y divide-gray-100">
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">Teléfono</dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">0000000000</dd>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.phone}</dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">Dirección de correo electrónico</dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">margotfoster@example.com</dd>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.email}</dd>
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">LinkedIn URL</dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">https://www.linkedin.com</dd>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.linkedin}</dd>
               </div>
           </dl>
       </div>
-      <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+      {/* <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
         <dt className="text-sm font-medium leading-6 text-gray-900">Attachments</dt>
         <dd className="mt-2 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
           <ul role="list" className="divide-y divide-gray-100 rounded-md border border-gray-200">
@@ -95,7 +112,7 @@ export default function Example() {
             </li>
           </ul>
         </dd>
-      </div>
+      </div> */}
     </div>
   )
 }

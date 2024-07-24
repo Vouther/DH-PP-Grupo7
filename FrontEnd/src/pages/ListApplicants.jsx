@@ -3,15 +3,15 @@ import DropDownMenu from "../components/DropDownMenu";
 import ListaAspirantes from "../components/ListaAspirantes";
 import PostulateSection from "../components/PostulateSection";
 
-
 class ListApplicants extends React.Component {
     state = {
-        selectedProfession: "Todos",
+        selectedProfession: "Todos"
     };
 
     handleProfessionChange = (profession) => {
         this.setState({ selectedProfession: profession });
     };
+
     render() {
         return (
             <div>
