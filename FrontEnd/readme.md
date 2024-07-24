@@ -24,9 +24,9 @@ Currently, two official plugins are available:
 ###Detalle de un Aspirante
 ![Detalles 0](presentation/Detalle-datos-0.png)
 
-![Detalles 1](presentation/Detalle-datos-0.png)
+![Detalles 1](presentation/Detalle-datos-1.png)
 
-![Detalles 2](presentation/Detalle-datos-0.png)
+![Detalles 2](presentation/Detalle-datos-2.png)
 
 ###Vista de Contacto
 ![Contacto](presentation/Form-contact.png)
