@@ -112,14 +112,14 @@ export default function Example() {
             Contacto
           </a>
         </PopoverGroup>
-        
+
        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
         <a  href="/applicants/register"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900">
-          Postulate 
+          Postulate
         </a>
-       </div
-         
+       </div>
+
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="/error" className="text-sm font-semibold leading-6 text-gray-900">
             Acceder <span aria-hidden="true">&rarr;</span>
@@ -187,7 +187,7 @@ export default function Example() {
                   Contacto
                 </a>
               </div>
-              
+
               <div className="py-6">
                 <a
                   href="/applicants/register"
@@ -196,7 +196,7 @@ export default function Example() {
                   Postular
                 </a>
               </div>
-              
+
               <div className="py-6">
                 <a
                   href="/error"
