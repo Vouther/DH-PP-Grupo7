@@ -82,7 +82,7 @@ function PostulateSection() {
 
               <div className="mt-10 text-left">
           <a
-            href="#"
+            href="/applicants/register"
             className="inline-block rounded-md border border-transparent custom-link px-8 py-3 font-medium text-white"
           >
             Regístrate Ahora
@@ -93,8 +93,7 @@ function PostulateSection() {
         </div>
       </div>
     </div>
-        
     )
   }
-  
+
   export default PostulateSection

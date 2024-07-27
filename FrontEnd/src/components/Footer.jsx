@@ -102,10 +102,10 @@ export default function Example() {
                 Opciones
                 </h6>
                 <p className="mb-4">
-                <a href="#">Postularse</a>
+                <a href="/applicants/register">Postularse</a>
                 </p>
                 <p className="mb-4">
-                <a href="#">Empresas</a>
+                <a href="/error">Empresas</a>
                 </p>
                 <p className="mb-4">
                 <a href="/applicants">Aspirantes</a>

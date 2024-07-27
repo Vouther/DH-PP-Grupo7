@@ -36,7 +36,7 @@ export default function Example() {
           Queremos que puedas aprender, crecer humana y profesionalmente en un entorno desafiante.
         </p>
         <a
-          href="#"
+          href="/applicants/register"
           className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
           Postulate aqui <span aria-hidden="true">&rarr;</span>
