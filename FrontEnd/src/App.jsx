@@ -7,7 +7,7 @@ import ListApplicants from './pages/ListApplicants'
 import VistaError from './pages/Error404'
 import ContactForm from './pages/ContactForm'
 import DetailCandidate from './pages/DetailCandidate'
-
+import RegisterPage from './pages/RegisterPage'
 //Components generals
 import Banner from './components/ApplicationBanner'
 import NavBar from './components/NavigationBar'
@@ -26,6 +26,7 @@ function App() {
         <Route path="/applicants" element={<ListApplicants />} />
         <Route path="/contact" element={<ContactForm />} />
         <Route path="/applicants/:id" element={<DetailCandidate />} />
+        <Route path="/applicants/register" element={<RegisterPage />} />
         <Route path="/error" element={<VistaError/>}/>
       </Routes>
       <div>
