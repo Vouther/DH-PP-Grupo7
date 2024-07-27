@@ -51,11 +51,13 @@ renderDetail: (req, res) => {
     });
   },
 
-  renderRegister: async (req, res) => {
+renderRegister: async (req, res) => {
     try {
       const { Nombre, Apellido, Dni, Email, Telefono, LinkedinURL, FechaNacimiento, Sexo, ProfesionID, EstadoID, Password } = req.body;
-      const rutaImagen = req.file ? `/img/${req.file.filename}` : null;
+      const rutaImagen = req.file ? req.file.path : null;
       const dni = parseInt(req.body.Dni);
+      const profesionid = parseInt(req.body.ProfesionID);
+      const estadoid = parseInt(req.body.EstadoID);
 
       const existingAspirante = await db.Aspirante.findOne({ where: { Dni: dni } });
       if (existingAspirante) {
@@ -65,14 +67,14 @@ renderDetail: (req, res) => {
       const nuevoAspirante = await db.Aspirante.create({
         Nombre,
         Apellido,
-        Dni: dni,
+        Dni:dni,
         Email,
         Telefono,
         LinkedinURL,
         FechaNacimiento,
         Sexo,
-        ProfesionID,
-        EstadoID,
+        ProfesionID:profesionid,
+        EstadoID:estadoid,
         Password,
         Imagen: rutaImagen
       });
@@ -92,12 +94,15 @@ renderDetail: (req, res) => {
       };
 
       console.log('Aspirante creado:', aspiranteCreado);
-      res.status(201).json(aspiranteCreado);
+      res.status(201).json(aspiranteCreado); 
     } catch (error) {
       console.error('Error al registrar aspirante:', error);
       res.status(500).json({ error: 'Ocurrió un error al registrar el aspirante.' });
     }
   }
+  
+}
+
 
 }
 
