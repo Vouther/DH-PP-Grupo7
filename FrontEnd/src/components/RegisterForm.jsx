@@ -1,8 +1,11 @@
 
 import React, { useState } from 'react';
 import { cargaRegistro } from '../apiController/applicantsApi';
+import SuccessMessage from '../components/SuccessMessage';
 
 export default function RegisterForm() {
+  const [showSuccess, setShowSuccess] = useState(false);
+  
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [dni, setDni] = useState('');
@@ -149,7 +152,13 @@ export default function RegisterForm() {
     try {
       const response = await cargaRegistro(formData);
       console.log('Aspirante registrado:', response);
-      window.location.href = '/';
+
+     setShowSuccess(true);
+      setTimeout(() => {
+        setShowSuccess(false);
+        window.location.href = '/';
+      }, 5000);
+
 
     } catch (error) {
       console.error('Error al registrar aspirante:', error);
@@ -451,6 +460,7 @@ export default function RegisterForm() {
         <button type="button" className="text-sm font-semibold leading-6 text-gray-900"  onClick={handleCancel}>Cancelar</button>
         <button type="submit" id="botonv" className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Registrar</button>
       </div>
+      {showSuccess && <SuccessMessage message="El registro fue exitoso!" />}
     </form>
   );
 }
