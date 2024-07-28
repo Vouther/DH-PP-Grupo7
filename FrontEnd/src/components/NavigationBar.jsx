@@ -109,7 +109,7 @@ export default function Example() {
     </div>
 
     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-      <a href="#" className="bg-cyan-600 px-3.5 py-1 text-base font-semibold leading-7 text-white hover:bg-cyan-500 rounded-lg px-4 py-2 transition">
+      <a href="/login" className="bg-cyan-600 px-3.5 py-1 text-base font-semibold leading-7 text-white hover:bg-cyan-500 rounded-lg px-4 py-2 transition">
         Acceder <span aria-hidden="true">&rarr;</span>
       </a>
     </div>
