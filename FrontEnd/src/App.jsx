@@ -30,6 +30,7 @@ function App() {
         <Route path="/applicants/register" element={<RegisterPage />} />
         <Route path="/applicants/login" element={<LoginPage />} />
         <Route path="/error" element={<VistaError/>}/>
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
       <div>
         <Footer></Footer>

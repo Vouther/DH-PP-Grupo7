@@ -23,7 +23,7 @@ function Applicants({ aspirantes }) {
                 <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
                     {currentAspirantes.map((aspi) => (
                         <div key={"k" + aspi.lastName + aspi.dni} className="group relative">
-                            <div className="w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 h-40 sm:h-48 md:h-64 lg:h-80">
+                            <div className="w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-50 h-40 sm:h-48 md:h-64 lg:h-80">
                                 <img
                                     alt={aspi.detail}
                                     src={aspi.avatar}

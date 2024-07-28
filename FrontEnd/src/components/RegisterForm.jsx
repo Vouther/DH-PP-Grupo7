@@ -1,11 +1,9 @@
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { cargaRegistro } from '../apiController/applicantsApi';
 import SuccessMessage from '../components/SuccessMessage';
 
 export default function RegisterForm() {
   const [showSuccess, setShowSuccess] = useState(false);
-  
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
   const [dni, setDni] = useState('');
@@ -20,7 +18,6 @@ export default function RegisterForm() {
   const [imagen, setImagen] = useState(null);
 
   const [errors, setErrors] = useState({});
-
 
   const handleCancel = () => {
     setNombre('');
@@ -91,7 +88,7 @@ export default function RegisterForm() {
           return;
         }
 
-        if (file.size > 10 * 1024 * 1024) { 
+        if (file.size > 10 * 1024 * 1024) {
           setErrors((prevErrors) => ({
             ...prevErrors,
             imagen: 'La imagen debe ser menor de 10MB.',
@@ -102,7 +99,7 @@ export default function RegisterForm() {
         setImagen(file);
         setErrors((prevErrors) => ({
           ...prevErrors,
-          imagen: null, 
+          imagen: null,
         }));
       }
     };
@@ -162,7 +159,6 @@ export default function RegisterForm() {
 
     } catch (error) {
       console.error('Error al registrar aspirante:', error);
-    
     }
   };
 
@@ -425,9 +421,6 @@ export default function RegisterForm() {
                 )}
               </div>
             </div>
-
-
-
           </div>
         </div>
 
@@ -441,7 +434,7 @@ export default function RegisterForm() {
                 </svg>
                 <div className="mt-4 flex text-sm leading-6 text-gray-600">
                   <label htmlFor="imagenPerfil" className="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500">
-                    <span>Sube un archivo de imagen</span>
+                    <span className='custom-text'>Sube un archivo de imagen</span>
                     <input id="imagenPerfil" name="Imagen" type="file" className="sr-only" onChange={handleFileChange} />
                   </label>
                   <p className="pl-1">o arrastra y suelta aquí</p>
@@ -456,9 +449,9 @@ export default function RegisterForm() {
         </div>
       </div>
 
-      <div className="mt-6 flex items-center justify-end gap-x-6">
+      <div className="mt-6 py-10 flex items-center justify-end gap-x-6">
         <button type="button" className="text-sm font-semibold leading-6 text-gray-900"  onClick={handleCancel}>Cancelar</button>
-        <button type="submit" id="botonv" className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Registrar</button>
+        <button type="submit" id="botonv" className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm custom-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Registrar</button>
       </div>
       {showSuccess && <SuccessMessage message="El registro fue exitoso!" />}
     </form>

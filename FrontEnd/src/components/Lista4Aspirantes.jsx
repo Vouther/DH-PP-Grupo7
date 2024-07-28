@@ -2,7 +2,7 @@ import Applicants from "./Applicants";
 import { useState,useEffect } from "react";
 import { getApplicants } from "../apiController/applicantsApi";
 
-export default function listCantidate() {
+export default function ListCantidate() {
   const [applicants,setApplicants] = useState([]);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ export default function listCantidate() {
       setApplicants(res.aspirantes);
     })
   },[]);
-  
+
   function getRandomProducts(products, count) {
     const shuffled = [...products].sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);

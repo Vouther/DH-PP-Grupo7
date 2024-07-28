@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Field, Label, Switch } from '@headlessui/react'
 
-export default function Example() {
+export default function ContactForm() {
   const [agreed, setAgreed] = useState(false)
 
   return (
@@ -138,18 +138,20 @@ export default function Example() {
             </div>
             <Label className="text-sm leading-6 text-gray-600">
             Al seleccionar esto, usted acepta nuestra{' '}
-              <a href="#" className="font-semibold text-indigo-600">
+              <a href="#" className="font-semibold custom-text">
                 política de&nbsp;privacidad
               </a>
               .
             </Label>
           </Field>
         </div>
-        <div className="py-10">
-          <button
-            type="submit"
-            className="block w-full rounded-md custom-link px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >Enviar mensaje</button>
+        <div className="py-10 text-center">
+          <a
+            href="/"
+            className="inline-block rounded-md border border-transparent custom-link px-8 py-3 font-medium text-white"
+          >
+            Enviar Mensaje
+          </a>
         </div>
       </form>
     </div>

@@ -2,7 +2,7 @@ import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getApplicantById } from "../apiController/applicantsApi";
 
-export default function Example() {
+export default function CandidatePresentation() {
     const { id } = useParams();
     const [applicants,setApplicants] = useState([]);
 

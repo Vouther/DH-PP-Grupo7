@@ -2,7 +2,7 @@ import Applicants from "./Applicants";
 import { useState,useEffect } from "react";
 import { getApplicants } from "../apiController/applicantsApi";
 
-export default function listCantidate({ selectedProfession }) {
+export default function ListCantidate({ selectedProfession }) {
   const [applicants,setApplicants] = useState([]);
 
   useEffect(() => {
