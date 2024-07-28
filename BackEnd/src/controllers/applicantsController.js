@@ -103,6 +103,40 @@ renderDetail: (req, res) => {
       res.status(500).json({ error: 'Error al crear el aspirante' });
     });
   }
+  renderLogin: (req, res) => {
+    const { Email, Dni } = req.body; 
+    const dni = parseInt(Dni, 10);
+    
+    db.Aspirante.findOne({
+        where: { Email: "test1@example.us" } 
+    })
+    .then(function (aspirante) {
+        if (!aspirante) {
+            return res.status(404).json({ error: 'Aspirante no encontrado' });
+        }
+
+        // Comprobación de las credenciales, si es necesario
+        // if (aspirante.Dni !== dni) {
+        //     return res.status(401).json({ error: 'Credenciales inválidas' });
+        // }
+
+        console.log(`Inicio de sesión exitoso para el aspirante con email: ${aspirante.Email}`);
+
+        // Construir el objeto de respuesta con los datos del aspirante
+        const response = {
+            dni: aspirante.Dni,
+            firstName: aspirante.Nombre,
+            lastName: aspirante.Apellido,
+            email: aspirante.Email
+        };
+
+        res.status(200).json(response);
+    })
+    .catch(function (error) {
+        console.error('Error al obtener el aspirante:', error);
+        res.status(500).json({ error: 'Error al obtener el aspirante' });
+    });
+}
   
 }
 
