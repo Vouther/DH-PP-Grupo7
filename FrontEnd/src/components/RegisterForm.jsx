@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import { cargaRegistro } from '../apiController/applicantsApi';
 
@@ -77,10 +76,6 @@ export default function RegisterForm() {
     }
   };
 
-  // const handleFileChange = (event) => {
-  //   const file = event.target.files[0];
-  //   setImagen(file);
-  // };
     const handleFileChange = (event) => {
       const file = event.target.files[0];
 
@@ -93,7 +88,7 @@ export default function RegisterForm() {
           return;
         }
 
-        if (file.size > 10 * 1024 * 1024) { // 10MB
+        if (file.size > 10 * 1024 * 1024) { 
           setErrors((prevErrors) => ({
             ...prevErrors,
             imagen: 'La imagen debe ser menor de 10MB.',
@@ -113,7 +108,6 @@ export default function RegisterForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // antes de enviar
     if (!formIsValid()) {
       return;
     }
@@ -135,7 +129,6 @@ export default function RegisterForm() {
 
     console.log('Aspirante datos formulario:', formDataToSend);
 
-// objeto FormData
   const formData = new FormData();
   formData.append('Nombre', nombre);
   formData.append('Apellido', apellido);
@@ -156,7 +149,8 @@ export default function RegisterForm() {
     try {
       const response = await cargaRegistro(formData);
       console.log('Aspirante registrado:', response);
-  
+      window.location.href = '/';
+
     } catch (error) {
       console.error('Error al registrar aspirante:', error);
     
@@ -168,10 +162,10 @@ export default function RegisterForm() {
 
 
     if (!nombre.trim()) {
-      errors.nombre = 'El nombre es requerido.';
-    } else if (!/^[A-Za-z\s]+$/.test(nombre)) {
-      errors.nombre = 'El nombre solo puede contener letras y espacios.';
-    }
+        errors.nombre = 'El nombre es requerido.';
+      } else if (!/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(nombre)) {
+        errors.nombre = 'El nombre solo puede contener letras, espacios y caracteres acentuados.';
+      }
 
     if (!apellido.trim()) {
       errors.apellido = 'El apellido es requerido';
@@ -207,7 +201,7 @@ export default function RegisterForm() {
     if (!sexo.trim()) {
       errors.sexo = 'El sexo es requerido';
     }else if (!/^(m|f|otros)$/i.test(sexo)) {
-    errors.sexo = 'El valor del sexo debe ser "m", "f" o "otros".';
+    errors.sexo = 'El valor del sexo debe ser "M", "F" o "otros".';
     }
 
     if (!profesionID) {
@@ -453,7 +447,7 @@ export default function RegisterForm() {
         </div>
       </div>
 
-      <div className="mt-6 py-10 flex items-center justify-end gap-x-6">
+      <div className="mt-6 flex items-center justify-end gap-x-6">
         <button type="button" className="text-sm font-semibold leading-6 text-gray-900"  onClick={handleCancel}>Cancelar</button>
         <button type="submit" id="botonv" className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Registrar</button>
       </div>
