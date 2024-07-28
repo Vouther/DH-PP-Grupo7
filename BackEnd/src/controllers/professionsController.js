@@ -23,7 +23,6 @@ const controller = {
                 descripcion: profesion.Descripcion,
                 applicantsCount: profesion.get('applicantsCount')
             }));
-    
             res.json(formattedProfessions);
         }).catch(function (error) {
             console.error('Error al obtener las profesiones:', error);

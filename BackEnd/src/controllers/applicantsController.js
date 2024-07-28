@@ -25,8 +25,9 @@ const controller = {
         console.error('Error al obtener los aspirantes:', error);
         res.status(500).json({ error: 'Error al obtener los aspirantes' });
     });
-},
-renderDetail: (req, res) => {
+  },
+
+  renderDetail: (req, res) => {
     db.Aspirante.findByPk(req.params.id, {
         include: ["profesion", "estado"]
     })
@@ -51,61 +52,94 @@ renderDetail: (req, res) => {
     });
   },
 
-renderRegister: async (req, res) => {
-    try {
-      const { Nombre, Apellido, Dni, Email, Telefono, LinkedinURL, FechaNacimiento, Sexo, ProfesionID, EstadoID, Password } = req.body;
-      const rutaImagen = req.file ? req.file.path : null;
-      const dni = parseInt(req.body.Dni);
-      const profesionid = parseInt(req.body.ProfesionID);
-      const estadoid = parseInt(req.body.EstadoID);
+  renderRegister : (req, res) => {
+    const { Nombre, Apellido, Dni, Email, Telefono, LinkedinURL, FechaNacimiento, Sexo, ProfesionID, EstadoID, Password } = req.body;
 
-      const existingAspirante = await db.Aspirante.findOne({ where: { Dni: dni } });
-      if (existingAspirante) {
-        return res.status(400).json({ error: 'DNI ya registrado' });
-      }
+    const rutaImagen = req.file ? req.file.path : null;
+    const dni = parseInt(Dni, 10);
+    const profesionID = parseInt(ProfesionID, 10);
+    const estadoID = parseInt(EstadoID, 10);
+    const extOriginal = req.file ? path.extname(req.file.originalname) : '';
+    const rutaImagenConExtension = rutaImagen ? `${rutaImagen}${extOriginal}` : null;
 
-      const nuevoAspirante = await db.Aspirante.create({
-        Nombre,
-        Apellido,
-        Dni:dni,
-        Email,
-        Telefono,
-        LinkedinURL,
-        FechaNacimiento,
-        Sexo,
-        ProfesionID:profesionid,
-        EstadoID:estadoid,
-        Password,
-        Imagen: rutaImagen
-      });
+    //     const existingAspirante = await db.Aspirante.findOne({ where: { Dni: dni } });
+    //     if (existingAspirante) {
+    //       return res.status(400).json({ error: 'DNI ya registrado' });
+    //     }
 
-      const aspiranteCreado = {
-        Nombre,
-        Apellido,
-        Dni: dni,
-        Email,
-        Telefono,
-        LinkedinURL,
-        FechaNacimiento,
-        Sexo,
-        ProfesionID,
-        EstadoID,
-        Imagen: rutaImagen
+    db.Aspirante.create({
+      Nombre,
+      Apellido,
+      Dni: dni,
+      Email,
+      Telefono,
+      LinkedinURL,
+      FechaNacimiento,
+      Sexo,
+      ProfesionID: profesionID,
+      EstadoID: estadoID,
+      Password,
+      Imagen: rutaImagenConExtension
+    })
+
+    .then(aspirante => {
+      const result = {
+        dni: aspirante.Dni,
+        firstName: aspirante.Nombre,
+        lastName: aspirante.Apellido,
+        email: aspirante.Email,
+        phone: aspirante.Telefono,
+        linkedin: aspirante.LinkedinURL,
+        birthdate: aspirante.FechaNacimiento,
+        gender: aspirante.Sexo,
+        avatar: `http://localhost:3001/img/${aspirante.Imagen}`,
+        profesion: aspirante.ProfesionID,
+        estado: aspirante.EstadoID
       };
+      res.json(result);
+    })
+    .catch(error => {
+      console.error('Error al crear el aspirante:', error);
+      res.status(500).json({ error: 'Error al crear el aspirante' });
+    });
+  },
 
-      console.log('Aspirante creado:', aspiranteCreado);
-      res.status(201).json(aspiranteCreado);
-    } catch (error) {
-      console.error('Error al registrar aspirante:', error);
-      res.status(500).json({ error: 'Ocurrió un error al registrar el aspirante.' });
-    }
-  }
+  renderLogin: (req, res) => {
+    const { Email, Dni } = req.body;
+    const dni = parseInt(Dni, 10);
 
+    db.Aspirante.findOne({
+        where: { Email: "test1@example.us" }
+    })
+    .then(function (aspirante) {
+        if (!aspirante) {
+            return res.status(404).json({ error: 'Aspirante no encontrado' });
+        }
+
+        // Comprobación de las credenciales, si es necesario
+        // if (aspirante.Dni !== dni) {
+        //     return res.status(401).json({ error: 'Credenciales inválidas' });
+        // }
+
+        console.log(`Inicio de sesión exitoso para el aspirante con email: ${aspirante.Email}`);
+
+        // Construir el objeto de respuesta con los datos del aspirante
+        const response = {
+            dni: aspirante.Dni,
+            firstName: aspirante.Nombre,
+            lastName: aspirante.Apellido,
+            email: aspirante.Email
+        };
+
+        res.status(200).json(response);
+    })
+    .catch(function (error) {
+        console.error('Error al obtener el aspirante:', error);
+        res.status(500).json({ error: 'Error al obtener el aspirante' });
+    });
 }
 
-
-
-
+}
 
 module.exports = controller;
 

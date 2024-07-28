@@ -47,3 +47,25 @@ export async function cargaRegistro(formData) {
     throw new Error(`Error HTTP al registrar aspirante: ${error.message}`);
   }
 }
+
+export async function loginAspirante(formData) {
+  try {
+    const response = await fetch('http://localhost:3001/applicants/login', {
+      method: 'POST',
+      body: formData
+    });
+
+    if (!response.ok) {
+      throw new Error('Credenciales inválidas');
+    }
+
+    const data = await response.json();
+ 
+    console.log('Respuesta exitosa:', data);
+
+    return data; 
+  } catch (error) {
+    console.error('Error al intentar iniciar sesión:', error);
+    throw error; 
+  }
+}
