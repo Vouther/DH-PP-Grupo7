@@ -94,17 +94,17 @@ renderRegister: async (req, res) => {
       };
 
       console.log('Aspirante creado:', aspiranteCreado);
-      res.status(201).json(aspiranteCreado); 
+      res.status(201).json(aspiranteCreado);
     } catch (error) {
       console.error('Error al registrar aspirante:', error);
       res.status(500).json({ error: 'Ocurrió un error al registrar el aspirante.' });
     }
   }
-  
+
 }
 
 
-}
+
 
 
 module.exports = controller;
