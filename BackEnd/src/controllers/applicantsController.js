@@ -102,7 +102,7 @@ renderDetail: (req, res) => {
       console.error('Error al crear el aspirante:', error);
       res.status(500).json({ error: 'Error al crear el aspirante' });
     });
-  }
+  },
   renderLogin: (req, res) => {
     const { Email, Dni } = req.body; 
     const dni = parseInt(Dni, 10);
