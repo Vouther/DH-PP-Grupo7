@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { loginAspirante } from '../apiController/applicantsApi';
 import LoginMessage from '../components/LoginMessage';
