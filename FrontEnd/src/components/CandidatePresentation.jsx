@@ -1,18 +1,4 @@
-import { useState,useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { getApplicantById } from "../apiController/applicantsApi";
-
-export default function CandidatePresentation() {
-    const { id } = useParams();
-    const [applicants,setApplicants] = useState([]);
-
-    useEffect(() => {
-      console.log("Se monto el componente");
-      getApplicantById(id).then(res => {
-        setApplicants(res);
-      });
-    },[]);
-
+export default function CandidatePresentation({applicants}) {
     return (
       <section className="relative isolate overflow-hidden bg-white px-6 py-20 sm:py-28 lg:px-8">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20" />
@@ -26,20 +12,35 @@ export default function CandidatePresentation() {
                 molestiae. Numquam corrupti in laborum sed rerum et corporis.”
               </p>
             </blockquote> */}
-            <figcaption className="mt-10">
-              <img
-                alt=""
-                src={applicants.avatar}
-                className="mx-auto h-40 sm:h-48 md:h-64 lg:h-80 rounded-full"
-              />
-              <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                <div className="font-semibold text-gray-900">{applicants.firstName+" "+applicants.lastName}</div>
-                <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
-                  <circle r={1} cx={1} cy={1} />
-                </svg>
-                <div className="text-gray-600">{applicants.profesion}</div>
-              </div>
-            </figcaption>
+            {(applicants.dni !== undefined) ? (
+              <figcaption className="mt-10">
+                <img
+                  alt={"foto"+applicants.lastName}
+                  src={applicants.avatar}
+                  className="mx-auto h-40 sm:h-48 md:h-64 lg:h-80 rounded-full"
+                />
+                <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+                  <div className="font-semibold text-gray-900">{applicants.firstName+" "+applicants.lastName}</div>
+                  <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
+                    <circle r={1} cx={1} cy={1} />
+                  </svg>
+                  <div className="text-gray-600">{applicants.profesion}</div>
+                </div>
+              </figcaption>) : (
+              <figcaption className="mt-10">
+                <img
+                  alt="rrhh-gray-red-error"
+                  src="/public/rrhh-gray-red-error.jpg"
+                  className="mx-auto h-40 sm:h-48 md:h-64 lg:h-80 rounded-full"
+                />
+                <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+                  <div className="font-semibold text-gray-900">No se ha encontrado información sobre el aspirante seleccionado. Por favor, asegurese de haber ingresado correctamente los datos del aspirante.</div>
+                  <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
+                    <circle r={1} cx={1} cy={1} />
+                  </svg>
+                </div>
+              </figcaption>
+              )}
           </figure>
         </div>
       </section>

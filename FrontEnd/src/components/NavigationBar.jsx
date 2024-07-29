@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState,useEffect } from 'react';
+import { getProfessions } from '../apiController/professionApi';
 import {
   Dialog,
   DialogPanel,
@@ -19,7 +20,7 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
-const products = [
+/* const products = [
   { name: 'Desarrollador de Software', href: '#', icon: CursorArrowRaysIcon },
   { name: 'Ingeniero de Sistemas', href: '#', icon: CursorArrowRaysIcon },
   { name: 'Analista de Datos', href: '#', icon: CursorArrowRaysIcon },
@@ -30,10 +31,17 @@ const products = [
   { name: 'Desarrollador Front End', href: '#', icon: CursorArrowRaysIcon  },
   { name: 'Desarrollador Back End', href: '#', icon: CursorArrowRaysIcon },
   { name: 'Analista de Sistemas', href: '#', icon: CursorArrowRaysIcon  },
-]
+] */
 
 export default function NavigationBar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [profesions,setProfesions] = useState([]);
+
+  useEffect(() => {
+    getProfessions().then(res => {
+      setProfesions(res);
+    });
+  },[]);
 
   return (
   <header className="bg-white">
@@ -55,8 +63,8 @@ export default function NavigationBar() {
         </button>
       </div>
       <PopoverGroup className="hidden lg:flex lg:gap-x-12">
-        <Popover className="relative">
-          <PopoverButton className="flex items-center gap-x-1 text-base font-semibold leading-7 text-gray-900 hover:bg-blue-100 transition">
+        <Popover className="flex items-center relative">
+          <PopoverButton className="flex items-center gap-x-1 text-base font-semibold leading-7 text-gray-900 hover:bg-blue-100 transition px-4 py-2 rounded-lg">
             Profesiones
             <ChevronDownIcon aria-hidden="true" className="h-5 w-5 flex-none text-gray-400" />
           </PopoverButton>
@@ -66,16 +74,16 @@ export default function NavigationBar() {
             className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 transition data-[closed]:translate-y-1 data-[closed]:opacity-0 data-[enter]:duration-200 data-[leave]:duration-150 data-[enter]:ease-out data-[leave]:ease-in"
           >
             <div className="p-4">
-              {products.map((item) => (
+              {profesions.map((item) => (
                 <div
-                  key={item.name}
+                  key={"k"+item.name}
                   className="group relative flex items-center gap-x-6 rounded-lg p-1 text-sm leading-6 hover:bg-blue-100"
                 >
                   <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white p-1 m-1">
-                    <item.icon aria-hidden="true" className="h-5 w-5 text-gray-600 group-hover:text-indigo-600" />
+                    <CursorArrowRaysIcon aria-hidden="true" className="h-5 w-5 text-gray-600 group-hover:text-indigo-600" />
                   </div>
                   <div className="flex-auto">
-                    <a href={item.href} className="block font-semibold text-gray-900">
+                    <a href="#" className="block font-semibold text-gray-900">
                       {item.name}
                     </a>
                   </div>
@@ -134,11 +142,11 @@ export default function NavigationBar() {
                 </DisclosureButton>
 
                 <DisclosurePanel className="mt-2 space-y-2">
-                  {products.map((item) => (
+                  {profesions.map((item) => (
                     <DisclosureButton
-                      key={item.name}
+                      key={"k2"+item.name}
                       as="a"
-                      href={item.href}
+                      href="#"
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-blue-100 transition"
                     >
                       {item.name}

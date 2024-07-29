@@ -26,7 +26,7 @@ export default function ListProfesion() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-7 sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8">
       <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Profesiones</h2>
-      <p className="mt-4 text-xl text-gray-500">En esta sección, encontrarás una amplia variedad de profesiones disponibles en nuestra plataforma. Desde roles técnicos hasta creativos, ofrecemos un abanico de oportunidades para que encuentres el puesto ideal que se alinee con tus habilidades e intereses.</p>
+      <p className="mt-4 text-xl text-gray-500">En esta sección, encontrarás una amplia variedad de profesiones disponibles en nuestra plataforma. Desde roles técnicos hasta creativos, ofrecemos un amplio abanico de oportunidades para que encuentres el puesto ideal que se alinee con tus habilidades e intereses.</p>
       <div className="mx-auto max-w-2xl lg:max-w-4xl">
         <ul role="list" className="divide-y divide-gray-400 mt-4">
           {currentProfessions.map((prof) => (
@@ -38,7 +38,7 @@ export default function ListProfesion() {
                   <p className="mt-1 truncate text-xs leading-5 text-gray-500">{prof.descripcion}</p>
                 </div>
               </div>
-              <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+              <div className="hidden shrink-0 sm:flex sm:items-center">
                 <p className="text-sm leading-6 text-gray-900">{"Cantidad de aspirantes: " + prof.applicantsCount}</p>
               </div>
             </li>

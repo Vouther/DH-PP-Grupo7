@@ -1,11 +1,23 @@
 import CandidatePresentation from "../components/CandidatePresentation";
 import ApplicantInformation from "../components/ApplicantInformation";
+import { useState,useEffect } from "react";
+import { getApplicantById } from "../apiController/applicantsApi";
+import { useParams } from "react-router-dom";
 
 function DetailCandidate(){
+    const { id } = useParams();
+    const [applicants,setApplicants] = useState([]);
+
+    useEffect(() => {
+      getApplicantById(id).then(res => {
+        setApplicants(res);
+      });
+    },[]);
+
     return (
         <>
-            <CandidatePresentation/>
-            <ApplicantInformation/>
+            <CandidatePresentation applicants={applicants}/>
+            {(applicants.dni !== undefined) && (<ApplicantInformation applicants={applicants}/>)}
             <div className="py-10 flex items-center justify-center gap-x-6">
                 <a
                     href="/"

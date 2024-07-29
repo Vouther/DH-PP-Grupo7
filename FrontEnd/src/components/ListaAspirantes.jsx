@@ -6,7 +6,6 @@ export default function ListCantidate({ selectedProfession }) {
   const [applicants,setApplicants] = useState([]);
 
   useEffect(() => {
-    console.log("Se monto el componente");
     getApplicants().then(res => {
       setApplicants(res.aspirantes);
     })

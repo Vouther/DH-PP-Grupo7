@@ -6,9 +6,7 @@ import { getProfessions } from '../apiController/professionApi';
 
 function DropDownMenu({ onChange }) {
   const [profesions,setProfessions] = useState([]);
-  let pro;
   useEffect(() => {
-    console.log("Se monto el componente");
     getProfessions().then(res => {
       const allOption = {
         id: 0,

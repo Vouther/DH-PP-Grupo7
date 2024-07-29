@@ -1,18 +1,4 @@
-import { useState,useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { getApplicantById } from "../apiController/applicantsApi";
-
-export default function AplicantInformation() {
-  const { id } = useParams();
-  const [applicants,setApplicants] = useState([]);
-
-  useEffect(() => {
-    console.log("Se monto el componente");
-    getApplicantById(id).then(res => {
-      setApplicants(res);
-    });
-  },[]);
-
+export default function AplicantInformation({applicants}) {
   return (
     <div className="mx-auto max-w-2xl px-4 lg:max-w-4xl">
       <h1 className="text-xl pb-4 font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">Información del Aspirante</h1>
@@ -35,7 +21,8 @@ export default function AplicantInformation() {
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">Sexo</dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.gender}</dd>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{(applicants.gender == "F") ? ("Femenino")
+                  : (applicants.gender == "M") ? ("Masculino") : ("")}</dd>
               </div>
           </dl>
       </div>
@@ -69,7 +56,7 @@ export default function AplicantInformation() {
               </div>
               <div className="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt className="text-sm font-medium leading-6 text-gray-900">LinkedIn URL</dt>
-                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{applicants.linkedin}</dd>
+                  <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"><a href={applicants.linkedin}>{applicants.linkedin}</a></dd>
               </div>
           </dl>
       </div>
