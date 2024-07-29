@@ -14,7 +14,7 @@ Para la creacion de este proyecto utilizamos:
 
 Para codear utilizamos **_Visual Studio Code_**, para la creacion de la base de datos **_MySQL Workbench_** y **_XAMPP_** para utilizar su servidor y su sistema de gestión de bases de datos. También utilizamos un navegador para probar nuestra aplicación junto con **_Postman_**.
 
-Participantes Grupo 7 ✅
+## Participantes Grupo 7 ✅
 
 - Leonel Omar Ordoñez
 - Brian Luciano Valeriano Jurado 
