@@ -14,6 +14,13 @@ Para la creacion de este proyecto utilizamos:
 
 Para codear utilizamos **_Visual Studio Code_**, para la creacion de la base de datos **_MySQL Workbench_** y **_XAMPP_** para utilizar su servidor y su sistema de gestión de bases de datos. También utilizamos un navegador para probar nuestra aplicación junto con **_Postman_**.
 
+Participantes Grupo 7 ✅
+
+- Leonel Omar Ordoñez
+- Brian Luciano Valeriano Jurado 
+- Hector Fernando Calisaya
+- Pablo Ignacio Garzón
+
 ## Vistas de la plataforma
 El desafío de este sprint de práctica profesional está diseñado para demostrar nuestras habilidades en un entorno de proyecto real. Este ejercicio consiste en desarrollar una aplicación web full stack que permita visualizar un catálogo de aspirantes para una empresa multinacional de Recruiting de Recursos Humanos.
 
