@@ -82,7 +82,7 @@ export default function Footer() {
                     <p className="mb-4">
                         <a href="#!">Pablo Ignacio Garzón</a>
                     </p>
-                    <p>
+                    <p className="mb-4">
                         <a href="#!">Hector Fernando Calisaya</a>
                     </p>
                 </div>

@@ -9,27 +9,37 @@ Currently, two official plugins are available:
 
 ## Vistas de la plataforma
 
-###Inicio
+### Inicio
 ![Inicio](presentation/Header.png)
 
-###Lista de Aspirantes
+### Lista de Aspirantes
 ![Lista de Productos](presentation/Aspirantes.png)
 
-###Profesiones
+### Profesiones
 ![Busqueda](presentation/Profesiones.png)
 
-###Pie de Pagina
+### Pie de Pagina
 ![Footer](presentation/Footer.png)
 
-###Detalle de un Aspirante
-![Detalles 0](presentation/Detalle-datos-0.png)
+### Vista de Aspirantes
+![Vista-A](presentation/Vista-aspirantes.png)
 
-![Detalles 1](presentation/Detalle-datos-1.png)
+### Registro de un Aspirante
+![Registro](presentation/Vista-registro.png)
 
-![Detalles 2](presentation/Detalle-datos-2.png)
+### Detalle de un Aspirante
+![Detalle](presentation/Detalle-aspirante.png)
 
-###Vista de Contacto
+### Vista de Contacto
 ![Contacto](presentation/Form-contact.png)
 
-###Vista de Error
+### Vista de Error
 ![Error](presentation/Vista-error.png)
+
+## Diseño responsivo
+![Error](presentation/movil-1.png)
+![Error](presentation/movil-2.png)
+![Error](presentation/movil-3.png)
+![Error](presentation/movil-4.png)
+![Error](presentation/movil-5.png)
+![Error](presentation/movil-6.png)
