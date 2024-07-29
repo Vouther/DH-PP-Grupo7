@@ -3,7 +3,16 @@ const router = express.Router();
 const applicantsController = require('../controllers/applicantsController');
 
 const multer = require('multer');
-const upload = multer({ dest: 'public/img/' });
+const storage = multer.diskStorage({
+    destination: function(req, file, cb) {
+        cb(null, 'public/img/'); 
+    },
+    filename: function(req, file, cb) {
+        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+        cb(null, uniqueSuffix + '.' + file.originalname.split('.').pop()); 
+    }
+});
+const upload = multer({ storage: storage });
 
 //API aspirantes
 router.get('/',applicantsController.renderList);
