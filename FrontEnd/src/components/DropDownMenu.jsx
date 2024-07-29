@@ -4,7 +4,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import { getProfessions } from '../apiController/professionApi';
 
 
-function DropDownMenu({ onChange }) {
+function DropDownMenu({ onChange, initialSelection }) {
   const [profesions,setProfessions] = useState([]);
   useEffect(() => {
     getProfessions().then(res => {
@@ -15,10 +15,13 @@ function DropDownMenu({ onChange }) {
         descripcion: "Mostrar todas las profesiones",
         applicantsCount: 0
       };
-      setProfessions([allOption, ...res]);
-      setSelected(allOption);
+      const allProfessions = [allOption, ...res];
+      setProfessions(allProfessions);
+      const initial = allProfessions.find(prof => prof.name === initialSelection) || allOption;
+      setSelected(initial);
+      onChange(initial.name);
     });
-  },[]);
+  }, [initialSelection, onChange]);
 
   const [selected, setSelected] = useState(profesions);
 

@@ -83,7 +83,7 @@ export default function NavigationBar() {
                     <CursorArrowRaysIcon aria-hidden="true" className="h-5 w-5 text-gray-600 group-hover:text-indigo-600" />
                   </div>
                   <div className="flex-auto">
-                    <a href="#" className="block font-semibold text-gray-900">
+                    <a href={`/applicants?profession=${encodeURIComponent(item.name)}`} className="block font-semibold text-gray-900">
                       {item.name}
                     </a>
                   </div>
@@ -146,7 +146,7 @@ export default function NavigationBar() {
                     <DisclosureButton
                       key={"k2"+item.name}
                       as="a"
-                      href="#"
+                      href={`/applicants?profession=${encodeURIComponent(item.name)}`}
                       className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-blue-100 transition"
                     >
                       {item.name}

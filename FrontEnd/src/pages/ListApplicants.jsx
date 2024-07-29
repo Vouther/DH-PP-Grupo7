@@ -5,7 +5,7 @@ import PostulateSection from "../components/PostulateSection";
 
 class ListApplicants extends React.Component {
     state = {
-        selectedProfession: "Todos"
+        selectedProfession: new URLSearchParams(window.location.search).get('profession') || "Todos"
     };
 
     handleProfessionChange = (profession) => {
@@ -15,7 +15,10 @@ class ListApplicants extends React.Component {
     render() {
         return (
             <div>
-                <DropDownMenu onChange={this.handleProfessionChange} />
+                <DropDownMenu 
+                    onChange={this.handleProfessionChange} 
+                    initialSelection={this.state.selectedProfession}
+                />
                 <ListaAspirantes selectedProfession={this.state.selectedProfession} />
                 <PostulateSection/>
             </div>
