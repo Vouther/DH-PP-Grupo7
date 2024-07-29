@@ -99,7 +99,7 @@ export default function LoginForm() {
 
             <div className="sm:col-span-3">
               <label htmlFor="Email" className="block text-sm font-medium leading-6 text-gray-900">Email</label>
-              <div className="mt-4"> 
+              <div className="mt-4">
                 <input id="Email" name="Email" type="email" required autoComplete="email"
                   className={`block w-96 rounded-md border-0 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 ${
                     errors.email ? 'border-red-500' : ''
@@ -117,7 +117,6 @@ export default function LoginForm() {
             <button type="button" className="text-sm font-semibold leading-6 text-gray-900" onClick={handleCancel}>Cancelar</button>
             <button type="submit" id="botonl" className="rounded-md custom-link px-3 py-2 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Iniciar Sesion</button>
           </div>
-
         </div>
       </form>
     </div>

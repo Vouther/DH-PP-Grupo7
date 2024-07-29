@@ -88,16 +88,16 @@ export default function Footer() {
                 </div>
 
                 <div className="w-40">
-                    <p className="mb-4">
+                    <p className="mb-4 flex items-center justify-center md:justify-start">
                         <a href="/applicants/register" className="block px-3 py-1.5 rounded-lg bg-gray-100 text-gray-800 hover:bg-gray-300">Postularse</a>
                     </p>
-                    <p className="mb-4">
+                    <p className="mb-4 flex items-center justify-center md:justify-start">
                         <a href="/error" className="block px-3 py-1.5 rounded-lg bg-gray-100 text-gray-800 hover:bg-gray-300">Empresas</a>
                     </p>
-                    <p className="mb-4">
+                    <p className="mb-4 flex items-center justify-center md:justify-start">
                         <a href="/applicants" className="block px-3 py-1.5 rounded-lg bg-gray-100 text-gray-800 hover:bg-gray-300">Aspirantes</a>
                     </p>
-                    <p>
+                    <p className="mb-4 flex items-center justify-center md:justify-start">
                         <a href="/contact" className="block px-3 py-1.5 rounded-lg bg-gray-100 text-gray-800 hover:bg-gray-300">Contacto</a>
                     </p>
                 </div>
