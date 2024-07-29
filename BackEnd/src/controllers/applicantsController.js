@@ -116,14 +116,10 @@ const controller = {
         if (!aspirante) {
             return res.status(404).json({ error: 'Aspirante no encontrado' });
         }
-      
         // if (aspirante.Dni !== dni) {
         //     return res.status(401).json({ error: 'Credenciales inválidas' });
         // }
-
         console.log(`Inicio de sesión exitoso para el aspirante con email: ${aspirante.Email}`);
-
-        // Construir el objeto de respuesta con los datos del aspirante
         const response = {
             dni: aspirante.Dni,
             firstName: aspirante.Nombre,
