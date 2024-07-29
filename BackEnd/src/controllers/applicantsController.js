@@ -116,8 +116,7 @@ const controller = {
         if (!aspirante) {
             return res.status(404).json({ error: 'Aspirante no encontrado' });
         }
-
-        // Comprobación de las credenciales, si es necesario
+      
         // if (aspirante.Dni !== dni) {
         //     return res.status(401).json({ error: 'Credenciales inválidas' });
         // }
