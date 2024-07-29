@@ -55,16 +55,16 @@ const controller = {
 
   renderRegister : (req, res) => {
     const { Nombre, Apellido, Dni, Email, Telefono, LinkedinURL, FechaNacimiento, Sexo, ProfesionID, EstadoID, Password } = req.body;
-
-    const rutaImagen = req.file ? req.file.path : null;
     const dni = parseInt(Dni, 10);
     const profesionID = parseInt(ProfesionID, 10);
     const estadoID = parseInt(EstadoID, 10);
-    const extOriginal = req.file ? path.extname(req.file.originalname) : '';
-    const rutaImagenConExtension = rutaImagen ? `${rutaImagen}${extOriginal}` : null;
+    const rutImagen = req.file ? req.file.path : null;
+    const extImagen = req.file ? path.extname(req.file.originalname) : '';
+    const nameFile = rutImagen ? path.basename(rutImagen, path.extname(rutImagen)) : '';
+    const rutImagenExt = rutImagen ? `${nameFile}${extImagen}` : null;
 
-    //     const existingAspirante = await db.Aspirante.findOne({ where: { Dni: dni } });
-    //     if (existingAspirante) {
+    //     const existAspirante = await db.Aspirante.findOne({ where: { Dni: dni } });
+    //     if (existAspirante) {
     //       return res.status(400).json({ error: 'DNI ya registrado' });
     //     }
 
@@ -80,7 +80,7 @@ const controller = {
       ProfesionID: profesionID,
       EstadoID: estadoID,
       Password,
-      Imagen: rutaImagenConExtension
+      Imagen: rutImagenExt
     })
 
     .then(aspirante => {
