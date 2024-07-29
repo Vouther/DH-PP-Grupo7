@@ -58,10 +58,7 @@ const controller = {
     const dni = parseInt(Dni, 10);
     const profesionID = parseInt(ProfesionID, 10);
     const estadoID = parseInt(EstadoID, 10);
-    const rutImagen = req.file ? req.file.path : null;
-    const extImagen = req.file ? path.extname(req.file.originalname) : '';
-    const nameFile = rutImagen ? path.basename(rutImagen, path.extname(rutImagen)) : '';
-    const rutImagenExt = rutImagen ? `${nameFile}${extImagen}` : null;
+    const rutImagenExt= req.file.filename
 
     //     const existAspirante = await db.Aspirante.findOne({ where: { Dni: dni } });
     //     if (existAspirante) {
